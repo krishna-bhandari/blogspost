@@ -1,0 +1,44 @@
+{% extends 'job/base.html' %}
+
+
+{% block content %}
+{%load static%}
+  <main role="main" class='container'>
+
+  <section class="jumbotron text-center py-2">
+     <img src="{%static 'me.jpg'%}" class="img-thumbnail" width="20%" height="">
+    <div class="container">
+     
+      <h1>Krishna Bhandari</h1>
+      <p class="lead text-muted">Hello! I am Krishna Bahadur Bhandari from Chitwan, Nepal. I am a BCA student at Birendra Multiple Campus. </p>
+      <p>
+        <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a> -->
+        <a href="mailto:krishnabhandaribabu@gmail.com" class="btn btn-secondary my-2">Mail Me</a>
+      </p>
+    </div>
+  </section>
+  <div class="album py-3 bg-light">
+    <h3>Jobs </h3><hr>
+    <div class="container">
+      <div class="row">
+      {% for jobs in jobs.all%}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm bg-dark">
+           <img src="{{jobs.image.url}}" class="img-thumbnail" width="100%" height="">
+            <div class="card-body ">
+              <h3>{{jobs.title}}</h3><hr>
+              <p class="card-text" style="color: white;">{{jobs.summary}}</p>
+            </div>
+          </div>
+        </div>
+     {%endfor%}
+      </div>
+    </div>
+  </div>
+
+</main>
+{% endblock content %}
+  
+
+
+<
