@@ -3,10 +3,37 @@
 
 {% block content %}
 {%load static%}
-  <main role="main" class='container'>
 
+  <main role="main" class='container'>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   <a class="navbar-brand" href="{%url 'home'%}">Krishna</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarsExampleDefault">
+     <ul class="navbar-nav mr-auto nav-pills">
+      <li class="nav-item active">
+        <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-item nav-link" href="{%static 'self_resume.pdf'%}">My Resume</a>
+       
+      </li>
+      <li class="nav-item">
+      <a class="nav-item nav-link" href="{%url 'allblog'%}">Blogs</a>
+      </li>
+      <li>
+      <a class="nav-item nav-link" href="{%url 'profile'%}">Profile</a>
+        
+      </li>
+</ul>
+
+  
+  </div>
+</nav>
   <section class="jumbotron text-center py-2">
-     <img src="{%static 'me.jpg'%}" class="img-thumbnail" width="20%" height="">
+     <img src="{%static 'me.jpg'%}" class="img-responsive" width="20%" height="">
     <div class="container">
      
       <h1>Krishna Bhandari</h1>
@@ -24,7 +51,7 @@
       {% for jobs in jobs.all%}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm bg-dark">
-           <img src="{{jobs.image.url}}" class="img-thumbnail" width="100%" height="">
+           <img src="{{jobs.image.url}}" class="img-rounded" width="100%" height="">
             <div class="card-body ">
               <h3>{{jobs.title}}</h3><hr>
               <p class="card-text" style="color: white;">{{jobs.summary}}</p>

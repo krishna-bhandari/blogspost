@@ -7,6 +7,7 @@ from . import views
 
 urlpatterns = [
     path('profile/',views.profile,name='profile'),
+    path('add_job', views.add_job,name='add_job'),
 
 ]
 
